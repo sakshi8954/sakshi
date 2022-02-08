@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+   int main() {
+    int T;
+    scanf("%d",&T);
+    while(T)
+    {
+        long int x,y,f1,f2,fn,count=0;
+        scanf("%ld%ld",&x,&y);
+        f1=1;
+        f2=2;
+        if(f1>x && f1<y) count++;
+        if(f2>x && f2<y) count++;
+        fn=f1+f2;
+        while(fn < y)
+        {
+            if(fn>x && fn<y) 
+            {  count++;
+            }
+            f1=f2;
+            f2=fn;
+            fn=f1+f2;
+        }
+        printf("%ld\n",count);
+        T--;
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
